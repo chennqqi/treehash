@@ -1,4 +1,4 @@
-### treehash
+# treehash
 
 Implements the SHA256 tree hash algorithm (see [aws glacier](https://docs.aws.amazon.com/amazonglacier/latest/dev/checksum-calculations.html))
 
