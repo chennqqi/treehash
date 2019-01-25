@@ -1,6 +1,6 @@
 # treehash
 
-Implements the SHA256 tree hash algorithm (see [aws glacier](https://docs.aws.amazon.com/amazonglacier/latest/dev/checksum-calculations.html))
+Implements the SHA256 tree hash algorithm (as used by [aws glacier](https://docs.aws.amazon.com/amazonglacier/latest/dev/checksum-calculations.html))
 
 ## Installation
 
