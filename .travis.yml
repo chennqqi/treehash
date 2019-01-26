@@ -1,2 +1,2 @@
 language: go
-script: GO111GOMODULE=on && go mod vendor &&  go test -v github.com/downeast/treehash
+script: GO111MODULE=on go mod vendor &&  go test -v github.com/downeast/treehash
