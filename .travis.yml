@@ -1,2 +1,4 @@
 language: go
+go:
+  - "1.11"
 script: GO111MODULE=on go mod vendor &&  go test -v github.com/downeast/treehash
