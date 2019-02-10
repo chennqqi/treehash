@@ -25,6 +25,17 @@ func New() hash.Hash {
 	}
 }
 
+func FromHashes(in [][]byte) []byte {
+	nodes := make([]*node, len(in))
+	for i, b := range in {
+		nodes[i] = &node{
+			sha256: b,
+		}
+	}
+	root := reduce(nodes)
+	return root.sha256
+}
+
 func (d *digest) Size() int { return sha256.Size }
 
 func (d *digest) BlockSize() int { return sha256.BlockSize }
@@ -91,15 +102,4 @@ func (d *digest) Sum(in []byte) []byte {
 
 func (d *digest) Write(p []byte) (n int, err error) {
 	return d.buf.Write(p)
-}
-
-func (d *digest) FromHashes(in [][]byte) []byte {
-	nodes := make([]*node, len(in))
-	for i, b := range in {
-		nodes[i] = &node{
-			sha256: b,
-		}
-	}
-	root := reduce(nodes)
-	return root.sha256
 }
